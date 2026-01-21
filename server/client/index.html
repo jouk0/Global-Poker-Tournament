@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Global Poker Tournaments</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/styles-poker.css">
+        <script src="/js/socket.io.min.js"></script>
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <meta property="og:title" content="Global Poker Tournaments">
+        <meta property="og:type" content="article"/>
+        <meta property="og:image" content="/favicon.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <!--  Non-Essential, But Recommended -->
+        <meta property="og:description" content="Play globally Texsas Holdem Poker in your private rooms.">
+        <meta property="og:site_name" content="Global Poker Tournaments">
+        <meta name="twitter:image:alt" content="Global Poker Tournaments">
+        <meta name="description" content="Play globally Texsas Holdem Poker in your private rooms.">
+        <meta name="keywords" content="poker, texas holdem, free to play, real time poker">
+        <meta name="author" content="Copyright © 2026 Purkkiin.fi">
+
+    </head>
+    <body>
+        <section id="home">
+            <header>
+                <img src="/favicon.png" width="200" alt="Global Texas Hold'em Tournaments" title="Global Texas Hold'em Tournaments">
+                <h1>Global Texas Hold'em Tournaments</h1>
+                <div class="playerCoin heroPlayer">
+                    <div class="balance">Balance</div>
+                    <div class="chips"></div>
+                </div>
+            </header>
+            <div id="roomControls" title="Click to expand/collapse">
+                <h2>Create or join room</h2>
+                <input type="text" id="roomName" placeholder="Room name" title="Room name">
+                <button id="joinRoomBtn" title="Join room">Join Room</button>
+                <h2>Rooms</h2>
+                <div id="rooms"></div>
+            </div>
+            <h2>Server stats</h2>
+            <div id="stats"></div>
+        </section>
+        <section id="gameBoard">
+            <header>
+                <h1 id="roomTitle"></h1>
+                <button id="leaveRoomBtn" title="Leave room">Leave Room</button>
+                <p class="progressStatusText"></p>
+                <progress id="betTime" max="600"></progress>
+            </header>
+            <div id="playersContainer"></div>
+            <button class="newHandBtn">Start</button>
+            <div id="boardArea" class="hide">
+                <div id="potContainer">
+                    <h2><strong>Pot:</strong> $<span id="potAmount">0</span></h2>
+                </div>
+                <h3>Board</h3>
+                <div id="boardCards"></div>
+    
+                <div id="heroHand">
+                    <h3>Your Hand</h3>
+                    <div id="handCards"></div>
+                </div>
+    
+                <div class="equity">
+                    <h2>Equity</h2>
+                    <div id="equityCoins"></div>
+                </div>
+            </div>
+    
+            <div id="controls" class="hide">
+                <div class="inputButtonRow">
+                    <input type="number" id="raiseInput" placeholder="Enter raise amount">
+                    <button id="raiseBtn">Raise</button>
+                </div>
+                <button id="allIn" title="All In">All In</button>
+                <button id="callBtn" title="Call">Call</button>
+                <button id="foldBtn" title="Fold">Fold</button>
+                <button id="raise50" title="Raise $50">Raise $50</button>
+                <button id="raise100" title="Raise $100">Raise $100</button>
+                <button id="raise150" title="Raise $150">Raise $150</button>
+                <button id="raise200" title="Raise $200">Raise $200</button>
+                <button id="raise400" title="Raise $400">Raise $400</button>
+                <button id="raise800" title="Raise $800">Raise $800</button>
+                <div class="checkbox" title="Auto Raise 50">
+                    <label for="autoRaise50">Auto Raise 50</label>
+                    <input type="checkbox" id="autoRaise50" name="autoRaise50" />
+                </div>
+                <div class="checkbox" title="Auto Raise 100">
+                    <label for="autoRaise100">Auto Raise 100</label>
+                    <input type="checkbox" id="autoRaise100" name="autoRaise100" />
+                </div>
+                <div class="checkbox" title="Auto Raise 150">
+                    <label for="autoRaise150">Auto Raise 150</label>
+                    <input type="checkbox" id="autoRaise150" name="autoRaise150" />
+                </div>
+                <div class="checkbox" title="Auto Raise 200">
+                    <label for="autoRaise200">Auto Raise 200</label>
+                    <input type="checkbox" id="autoRaise200" name="autoRaise200" />
+                </div>
+                <div class="checkbox" title="Auto Raise 400">
+                    <label for="autoRaise400">Auto Raise 400</label>
+                    <input type="checkbox" id="autoRaise400" name="autoRaise400" />
+                </div>
+                <div class="checkbox" title="Auto Raise 800">
+                    <label for="autoRaise800">Auto Raise 800</label>
+                    <input type="checkbox" id="autoRaise800" name="autoRaise800" />
+                </div>
+            </div>
+            <div class="deeperAnalysis hide">
+                <h2>Deeper analysis</h2>
+                <div id="analysisBox"></div>
+            </div>
+            <div class="logs">
+                <h3>Logs</h3>
+                <pre id="log"></pre>
+            </div>
+        </div>
+        
+
+        <script src="/js/app-poker.js"></script>
+    </body>
+</html>

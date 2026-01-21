@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "poker-analyzer",
+  "version": "1.0.0",
+  "description": "Play globally Texsas Holdem Poker in your private rooms.",
+  "license": "ISC",
+  "author": "Mika: <mika.petteri.korhonen@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "sequelize": "^6.37.7",
+    "socket.io": "^4.8.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
